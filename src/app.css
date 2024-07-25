@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bodyColor);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.section {
+  padding: 4rem 0 2rem;
+}
+main {
+  padding-top: 88px; /* Adjust based on your actual navbar height */
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.logos {
+  width: 45px;
+  cursor: pointer;
+  margin-right: 0.75rem;
+}
+
+.icon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+}
+
+.btn {
+  padding: 0.6rem 1.5rem;
+  background: var(--gradientColor);
+  border-radius: 3rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn a {
+  color: var(--whiteColor);
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: var(--SecondaryColor);
+}
+
+img,
+video {
+  width: 100%;
+  height: auto;
+}
+
+input {
+  font-size: 100%;
+}
+
+@media screen and (min-width: 1240px) {
+  .container {
+    width: 80% !important;
+    margin: auto !important;
+  }
+  main {
+    padding-top: 100px; /* Adjust based on your actual navbar height */
+  }
+  .section {
+    padding: 6rem 0 4rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  body {
+    zoom: 1.7;
+  }
+}
+@media screen and (min-width: 300px) {
+  main {
+    padding-top: 63px; /* Adjust based on your actual navbar height */
+  }
+  @media screen and (min-width: 700px) {
+    main {
+      padding-top: 114px; /* Adjust based on your actual navbar height */
+    }
+  }
+  @media screen and (min-width: 1100px) {
+    main {
+      padding-top: 113px; /* Adjust based on your actual navbar height */
+    }
+  }
+  @media screen and (min-width: 1300px) {
+    main {
+      padding-top: 73px; /* Adjust based on your actual navbar height */
+    }
+  }
+}
