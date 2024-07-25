@@ -3,7 +3,7 @@ import ReactPaginate from "react-paginate";
 import ReviewContainer from "../Components/ReviewContainer";
 import { useFetch } from "../Hooks/useFetch";
 import { fetchAvailableReviews } from "../HelperFn/https";
-import { FaStar, FaRegStar, FaSpinner } from "react-icons/fa";
+import { FaStar, FaRegStar } from "react-icons/fa";
 import Loader from "../Components/Loader";
 
 const Reviews = () => {
@@ -45,87 +45,89 @@ const Reviews = () => {
   };
 
   return (
-    <>
-      <div className="w-full md:w-1/2 xl:w-2/3 p-6">
-        <h2 className="text-5xl text-slate-700 font-semibold mt-12 mb-24">
-          What Our Customers Are Saying.
-        </h2>
-        {error && <p>Error: {error.message}</p>}
-        {isFetching && <Loader />}
-        {reviews && reviews.length > 0 && (
-          <div>
-            {displayReviews.map((review) => (
-              <div
-                key={review.id}
-                className="mb-4 p-4 bg-slate-50 size-11/12 border rounded-xl shadow-xl"
-              >
-                <div className="flex items-center mb-2">
-                  {review.imageBase64 ? (
-                    <img
-                      src={`data:image/png;base64,${review.imageBase64}`}
-                      alt="img"
-                      className="w-1/12 object-cover rounded-full mb-9 mt-9 mx-6"
-                    />
-                  ) : (
-                    <div className="bg-cyan-600 text-white rounded-full h-20 w-20 text-xl flex items-center justify-center mx-7 my-7">
-                      {review.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </div>
-                  )}
-
-                  <div className="ml-4 flex-grow">
-                    <h3 className="text-lg font-semibold">{review.name}</h3>
-                    <div className="flex justify-between">
-                      <p className="flex">{renderStars(review.rating)}</p>
-                      <p className="text-gray-600 ml-auto mr-6">
-                        Date of experience:{" "}
-                        {new Date(review.date).toLocaleDateString()}
-                      </p>
+    <div className="container mx-auto px-4 py-8">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl text-slate-700 font-semibold mt-6 mb-8 sm:mb-12">
+        What Our Customers Are Saying.
+      </h2>
+      <div className="flex flex-col lg:flex-row gap-8">
+        <div className="w-full lg:w-2/3 order-2 lg:order-1">
+          {error && <p className="text-red-500">Error: {error.message}</p>}
+          {isFetching && <Loader />}
+          {reviews && reviews.length > 0 && (
+            <div>
+              {displayReviews.map((review) => (
+                <div
+                  key={review.id}
+                  className="mb-4 p-4 bg-slate-50 border rounded-xl shadow-md"
+                >
+                  <div className="flex items-center mb-2">
+                    {review.imageBase64 ? (
+                      <img
+                        src={`data:image/png;base64,${review.imageBase64}`}
+                        alt="img"
+                        className="w-12 h-12 object-cover rounded-full"
+                      />
+                    ) : (
+                      <div className="bg-cyan-600 text-white rounded-full h-12 w-12 text-xl flex items-center justify-center">
+                        {review.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
+                      </div>
+                    )}
+                    <div className="ml-4 flex-grow">
+                      <h3 className="text-lg font-semibold">{review.name}</h3>
+                      <div className="flex flex-col sm:flex-row sm:justify-between">
+                        <p className="flex">{renderStars(review.rating)}</p>
+                        <p className="text-gray-600 sm:ml-auto text-sm">
+                          Date of experience:{" "}
+                          {new Date(review.date).toLocaleDateString()}
+                        </p>
+                      </div>
                     </div>
                   </div>
+                  <p className="mt-2">{review.message}</p>
                 </div>
-                <p>{review.message}</p>
-              </div>
-            ))}
-          </div>
-        )}
-        {reviews.length > REVIEWS_PER_PAGE && (
-          <ReactPaginate
-            previousLabel={"Prev"}
-            nextLabel={"Next"}
-            breakLabel={"..."}
-            pageCount={Math.ceil(reviews.length / REVIEWS_PER_PAGE)}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={5}
-            onPageChange={handlePageClick}
-            containerClassName={"flex justify-end space-x-2 mr-32 my-32 py-9"}
-            pageClassName={"inline-block"}
-            pageLinkClassName={
-              "px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-200"
-            }
-            previousClassName={"inline-block"}
-            previousLinkClassName={
-              "px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-200"
-            }
-            nextClassName={"inline-block"}
-            nextLinkClassName={
-              "px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-200"
-            }
-            breakClassName={"inline-block break-me"}
-            breakLinkClassName={
-              "px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-200"
-            }
-            activeClassName={"bg-blue-500 text-white"}
-          />
-        )}
+              ))}
+            </div>
+          )}
+          {reviews.length > REVIEWS_PER_PAGE && (
+            <ReactPaginate
+              previousLabel={"Prev"}
+              nextLabel={"Next"}
+              breakLabel={"..."}
+              pageCount={Math.ceil(reviews.length / REVIEWS_PER_PAGE)}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={5}
+              onPageChange={handlePageClick}
+              containerClassName={
+                "flex justify-center lg:justify-end space-x-2 my-8 py-4"
+              }
+              pageClassName={"inline-block"}
+              pageLinkClassName={
+                "px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-200"
+              }
+              previousClassName={"inline-block"}
+              previousLinkClassName={
+                "px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-200"
+              }
+              nextClassName={"inline-block"}
+              nextLinkClassName={
+                "px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-200"
+              }
+              breakClassName={"inline-block break-me"}
+              breakLinkClassName={
+                "px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-200"
+              }
+              activeClassName={"bg-blue-500 text-white"}
+            />
+          )}
+        </div>
+        <div className="w-full lg:w-1/3 order-1 lg:order-2 mb-8 lg:mb-0">
+          <ReviewContainer reviews={reviews} refreshReviews={refetch} />
+        </div>
       </div>
-      <ReviewContainer
-        reviews={reviews}
-        refreshReviews={refetch} // Passed the refetch function to refetch without reload
-      />
-    </>
+    </div>
   );
 };
 

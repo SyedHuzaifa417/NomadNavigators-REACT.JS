@@ -12,7 +12,7 @@ const ReviewContainer = ({ reviews, refreshReviews }) => {
   const closeModal = () => {
     setModalisOpen(false);
     if (refreshReviews) {
-      refreshReviews(); // Refresh reviews when the modal is closed
+      refreshReviews();
     }
   };
 
@@ -27,8 +27,7 @@ const ReviewContainer = ({ reviews, refreshReviews }) => {
 
   function ratingNumber(num) {
     const number = reviews.filter((item) => item.rating === num);
-    const count = number.length;
-    return count;
+    return number.length;
   }
 
   const handleWriteReviewClick = () => {
@@ -41,18 +40,23 @@ const ReviewContainer = ({ reviews, refreshReviews }) => {
     }
   };
 
+  const averageRating =
+    reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length;
+
   return (
-    <div className="w-full md:w-1/2 xl:w-1/3 p-6 shadow-xl absolute top-72 right-20 shadow-slate-400 bg-slate-50">
-      <div className="flex justify-between mb-4">
+    <div className="w-full bg-slate-50 p-4 sm:p-6 rounded-lg shadow-md">
+      <div className="flex flex-col sm:flex-row justify-between mb-4">
         <div>
-          <h2 className="text-2xl font-medium font-sans mb-4">
+          <h2 className="text-xl sm:text-2xl font-medium font-sans mb-2">
             Customer Reviews
           </h2>
           <div className="flex items-center">
-            <h1 className="text-4xl font-bold pr-4">4.9</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold pr-2">
+              {averageRating.toFixed(1)}
+            </h1>
             <div className="ml-2">
               <p>⭐⭐⭐⭐⭐</p>
-              <p className="text-gray-600">
+              <p className="text-sm text-gray-600">
                 {reviews ? reviews.length : 0} Reviews
               </p>
             </div>
@@ -60,32 +64,34 @@ const ReviewContainer = ({ reviews, refreshReviews }) => {
         </div>
 
         <button
-          className="bg-blue-600 text-white py-2 px-4 rounded-sm"
+          className="bg-blue-600 text-white py-2 px-4 rounded-sm mt-4 sm:mt-0"
           onClick={handleWriteReviewClick}
         >
           Write a review
         </button>
-        <Modal open={modalisOpen} onClose={closeModal}>
-          {modalContent}
-        </Modal>
       </div>
 
-      <div>
+      <div className="mt-4">
         {[5, 4, 3, 2, 1].map((num) => (
           <div className="flex items-center mb-1" key={num}>
             <span className="text-sm text-gray-600 w-16">{num} Stars</span>
             <div className="relative w-full h-2 ml-2 bg-gray-300 rounded">
               <div
                 className="absolute left-0 top-0 h-2 bg-blue-500 rounded"
-                style={progressBarStyles(ratingNumber(num))}
+                style={progressBarStyles(
+                  (ratingNumber(num) / reviews.length) * 100
+                )}
               ></div>
             </div>
-            <span className="text-sm text-gray-600 ml-2">
+            <span className="text-sm text-gray-600 ml-2 w-8 text-right">
               {ratingNumber(num)}
             </span>
           </div>
         ))}
       </div>
+      <Modal open={modalisOpen} onClose={closeModal}>
+        {modalContent}
+      </Modal>
     </div>
   );
 };
