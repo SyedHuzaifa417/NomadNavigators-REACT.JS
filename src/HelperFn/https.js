@@ -1,4 +1,5 @@
-const API_URL = "https://localhost:7266/api/";
+// const API_URL = "https://localhost:7266/api/";
+const API_URL = import.meta.env.VITE_APP_API_URL;
 
 export async function fetchAvailableReviews() {
   const response = await fetch(`${API_URL}Reviews`);
