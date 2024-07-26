@@ -4,7 +4,9 @@ import ReviewContainer from "../Components/ReviewContainer";
 import { useFetch } from "../Hooks/useFetch";
 import { fetchAvailableReviews } from "../HelperFn/https";
 import { FaStar, FaRegStar } from "react-icons/fa";
-import Loader from "../Components/Loader";
+import { FaSpinner } from "react-icons/fa";
+
+// import Loader from "../Components/Loader";
 
 const Reviews = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -52,7 +54,11 @@ const Reviews = () => {
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="w-full lg:w-2/3 order-2 lg:order-1">
           {error && <p className="text-red-500">Error: {error.message}</p>}
-          {isFetching && <Loader />}
+          {isFetching && (
+            <div className="flex items-center justify-center w-full h-full">
+              <FaSpinner className="text-blue-500 animate-spin" size={50} />
+            </div>
+          )}
           {reviews && reviews.length > 0 && (
             <div>
               {displayReviews.map((review) => (

@@ -3,7 +3,7 @@ import FlightCard from "../Components/FlightCard";
 import { useFetch } from "../Hooks/useFetch";
 import { fetchAvailableFlights } from "../HelperFn/https";
 import { FaSpinner } from "react-icons/fa";
-import { Slider } from "@mui/material"; // Make sure to install @mui/material
+import { Slider } from "@mui/material";
 
 const Flights = () => {
   const {

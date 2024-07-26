@@ -164,7 +164,9 @@ const PlaceDetails = () => {
         </>
       ) : (
         <div className="mt-72">
-          <Loader />
+          <div className="flex items-center justify-center w-full h-full">
+            <FaSpinner className="text-blue-500 animate-spin" size={50} />
+          </div>
         </div>
       )}
     </div>

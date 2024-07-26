@@ -42,7 +42,11 @@ const Destinations = () => {
           Error: {error.message}
         </p>
       )}
-      {isFetching && <Loader />}
+      {isFetching && (
+        <div className="flex items-center justify-center w-full h-full">
+          <FaSpinner className="text-blue-500 animate-spin" size={50} />
+        </div>
+      )}
       <div className="secContent grid">
         {getTopPlaces(places).map((p) => {
           return (
