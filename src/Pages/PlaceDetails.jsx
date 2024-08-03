@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "../../src/Components/Loader";
+import { FaSpinner } from "react-icons/fa";
 
 const PlaceDetails = () => {
   const { id } = useParams();

@@ -10,7 +10,7 @@ import { FaSpinner } from "react-icons/fa";
 
 const Reviews = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const REVIEWS_PER_PAGE = 6;
+  const REVIEWS_PER_PAGE = 8;
 
   const {
     fetchedData: reviews,
@@ -51,8 +51,8 @@ const Reviews = () => {
       <h2 className="text-3xl sm:text-4xl md:text-5xl text-slate-700 font-semibold mt-6 mb-8 sm:mb-12">
         What Our Customers Are Saying.
       </h2>
-      <div className="flex flex-col lg:flex-row gap-8">
-        <div className="w-full lg:w-2/3 order-2 lg:order-1">
+      <div className="flex flex-col lg:flex-row gap-8 relative">
+        <div className="w-full lg:w-3/5">
           {error && <p className="text-red-500">Error: {error.message}</p>}
           {isFetching && (
             <div className="flex items-center justify-center w-full h-full">
@@ -129,7 +129,7 @@ const Reviews = () => {
             />
           )}
         </div>
-        <div className="w-full lg:w-1/3 order-1 lg:order-2 mb-8 lg:mb-0">
+        <div className="w-full lg:w-2/5 mb-8 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
           <ReviewContainer reviews={reviews} refreshReviews={refetch} />
         </div>
       </div>
