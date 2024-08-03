@@ -4,7 +4,7 @@ import { fetchAvailableRestaurants } from "../HelperFn/https";
 import RestaurantItem from "../Components/RestaurantItem";
 import restaurantImg from "../Assets/restaurant.jpg";
 import Footer from "../Pages/Home/Footer/Footer";
-import Loader from "../Components/Loader";
+import { FaSpinner } from "react-icons/fa";
 
 const RestaurantSection = ({ title, restaurants }) => (
   <div className="mb-8">
@@ -58,7 +58,11 @@ const Restaurants = () => {
             Error: {error.message}
           </p>
         )}
-        {isFetching && <Loader />}
+        {isFetching && (
+          <div className="flex items-center justify-center w-full h-full">
+            <FaSpinner className="text-blue-500 animate-spin" size={50} />
+          </div>
+        )}
         {restaurants && restaurants.length > 0 && (
           <div className="container mx-auto px-4 mt-4">
             <RestaurantSection

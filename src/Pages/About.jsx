@@ -34,7 +34,7 @@ const About = () => {
       <div className="relative py-20 sm:py-40">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row items-center justify-center">
-            <h1 className="text-center font-bold text-blue-800 font-serif text-3xl sm:text-5xl mb-8 sm:mb-0 sm:mr-8 z-10">
+            <h1 className="text-center font-bold text-cyan-800 dark:text-cyan-400 font-serif text-3xl sm:text-5xl mb-8 sm:mb-0 sm:mr-8 z-10">
               Get to Know Us!
             </h1>
             <img
@@ -57,11 +57,11 @@ const About = () => {
             </div>
             <div className="w-full md:w-2/3">
               <Link to="/">
-                <h3 className="text-2xl font-semibold text-blue-600 leading-relaxed tracking-wide hover:text-blue-800 mb-2">
+                <h3 className="text-2xl font-semibold text-cyan-600 dark:text-cyan-300 leading-relaxed tracking-wide hover:text-cyan-800 dark:hover:text-cyan-600 mb-2">
                   Travel With Us →
                 </h3>
               </Link>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-slate-300">
                 No matter who you are, or where you are going, our travel brands
                 help every type of traveler not only find the trip that's right
                 for them, but get the best value every time.
@@ -78,11 +78,11 @@ const About = () => {
             </div>
             <div className="w-full md:w-2/3">
               <button onClick={() => setopenModal(true)}>
-                <h3 className="text-2xl font-semibold text-blue-600 leading-relaxed tracking-wide hover:text-blue-800 mb-2">
+                <h3 className="text-2xl font-semibold text-cyan-600 dark:text-cyan-300 leading-relaxed tracking-wide hover:text-cyan-800 dark:hover:text-cyan-600 mb-2">
                   Partner With Us →
                 </h3>
               </button>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-slate-300">
                 We connect partners big and small to the universe of travelers,
                 giving access to data, tools and technology that empowers,
                 maximizes potential and builds their business.
@@ -119,7 +119,7 @@ const About = () => {
       </div>
       <hr className="border-t-4 border-sky-600/25 my-8 mx-auto w-3/4" />
       <div className="text-center p-8 md:p-28 relative">
-        <h1 className="pb-10 md:pb-20 font-semibold font-sans text-3xl md:text-5xl text-slate-800">
+        <h1 className="pb-10 md:pb-20 font-semibold font-sans text-3xl md:text-5xl text-slate-800 dark:text-cyan-500">
           Client Testimonials
         </h1>
         <SliderFn />

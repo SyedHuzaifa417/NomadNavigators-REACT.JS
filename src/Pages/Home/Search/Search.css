@@ -1,21 +1,3 @@
-:root {
-  --PrimaryColor: hsl(199, 100%, 33%);
-  --SecondaryColor: hsl(187, 85%, 43%);
-  --gradientColor: linear-gradient(
-    to right,
-    hsl(187, 85%, 43%),
-    hsl(199, 100%, 33%)
-  );
-  --whiteColor: hsl(0, 0%, 100%);
-  --blackColor: hsl(201, 33%, 16%);
-  --textColor: hsl(240, 4%, 36%);
-  --whiteColorDeam: hsl(0, 0%, 93%);
-  --gretText: rgb(190, 190, 190);
-  --inputColor: rgb(239, 239, 239);
-  --bodyColor: rgb(240, 240, 246);
-  --cardBG: rgb(225, 225, 235);
-}
-
 .home {
   width: 100%;
   position: relative;
@@ -54,7 +36,7 @@
   align-items: stretch;
   justify-content: center;
   margin: auto;
-  color: var(--whiteColor);
+  color: #f6f6f6;
   z-index: 100;
 }
 .home .homeContent .textDiv {
@@ -71,31 +53,48 @@
 .home .homeContent .cardDiv {
   position: relative;
   padding: 2rem 1rem;
-  background: var(--whiteColor);
+  background: #f6f6f6;
+  border-radius: 10px;
+  gap: 1rem;
+}
+.dark .home .homeContent .cardDiv {
+  position: relative;
+  padding: 2rem 1rem;
+  background: #333;
   border-radius: 10px;
   gap: 1rem;
 }
 .home .homeContent .cardDiv label {
   display: block;
-  color: var(--textColor);
+  color: #044f5a;
   padding-bottom: 10px;
   font-size: 13px;
   font-weight: 500;
+}
+.dark .home .homeContent .cardDiv label {
+  color: #daf0e7;
 }
 .home .homeContent .cardDiv .label_total {
   justify-content: space-between;
   align-items: center;
 }
 .home .homeContent .cardDiv .label_total .total {
-  color: var(--textColor);
+  color: #044f5a;
   font-size: 18px;
   padding-bottom: 10px;
+}
+.dark .home .homeContent .cardDiv .label_total .total {
+  color: #daf0e7;
 }
 .home .homeContent .cardDiv .input {
   height: 40px;
   padding: 0 1rem;
-  background: var(--inputColor);
+  background: #e4e3e3;
   border-radius: 3rem;
+}
+.dark .home .homeContent .cardDiv .input {
+  background: #7a7a7a;
+  color: #d1cfcf;
 }
 .home .homeContent .cardDiv .input input {
   background: none;
@@ -107,21 +106,27 @@
 }
 .home .homeContent .cardDiv .input input::-moz-placeholder {
   font-size: 13px;
+  color: #fcfbfb;
 }
 .home .homeContent .cardDiv .input input::placeholder {
   font-size: 13px;
+  color: #d1cfcf;
 }
 .home .homeContent .cardDiv .input .icon {
   font-size: 18px;
-  color: var(--blackColor) !important;
+  color: #252525 !important;
   margin-left: 10px;
 }
 .home .homeContent .cardDiv .input .input[type="range"] {
-  background: blue;
+  background: rgb(50, 50, 71);
 }
 .home .homeContent .cardDiv .searchOptions {
   position: absolute;
-  background: var(--gradientColor);
+  background: linear-gradient(
+    to right,
+    hsl(187, 85%, 43%),
+    hsl(199, 100%, 33%)
+  );
   width: -moz-max-content;
   width: max-content;
   bottom: -0.7rem;
@@ -135,7 +140,7 @@
   cursor: pointer;
 }
 .home .homeContent .cardDiv .searchOptions:hover {
-  background: var(--PrimaryColor);
+  background: linear-gradient(to right, hsl(180, 85%, 43%), hsl(180, 95%, 31%));
 }
 .home .homeContent .cardDiv .searchOptions .icon {
   font-size: 18px;
@@ -150,11 +155,11 @@
 .home .homeContent .homeFooterIcons .icon {
   font-size: 20px;
   margin: 0 5px;
-  color: var(--whiteColor);
+  color: #f6f6f6;
   font-weight: 600;
 }
 .home .homeContent .homeFooterIcons .icon:hover {
-  color: var(--PrimaryColor);
+  color: #044f5a;
 }
 
 @media screen and (min-width: 500px) {
@@ -213,4 +218,4 @@
   .home .homeContent .cardDiv .searchOptions span {
     font-size: 17px;
   }
-} /*# sourceMappingURL=home.css.map */
+}

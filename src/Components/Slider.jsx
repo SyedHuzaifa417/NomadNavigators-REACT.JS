@@ -65,7 +65,7 @@ const SliderFn = () => {
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="bg-slate-200 p-5 mx-4 mb-4 rounded-3xl shadow-md relative"
+              className="bg-slate-200 dark:bg-gray-900 p-5 mx-4 mb-4 rounded-3xl shadow-md relative border border-gray-300 dark:border-gray-700"
             >
               <div className="flex flex-col items-center justify-center">
                 {review.imageBase64 && (

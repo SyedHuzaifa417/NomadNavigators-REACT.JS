@@ -26,7 +26,7 @@ const Register = ({ close, switchToLogin }) => {
       <div>
         <label
           htmlFor="userName"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-sm font-medium text-gray-700 dark:text-stone-300"
         >
           User Name:
         </label>
@@ -35,14 +35,14 @@ const Register = ({ close, switchToLogin }) => {
           id="userName"
           value={userName}
           onChange={(e) => setUsername(e.target.value)}
-          className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          className="mt-1 block w-full px-3 py-1 border dark:bg-stone-400 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm "
           required
         />
       </div>
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-sm font-medium text-gray-700 dark:text-stone-300"
         >
           Email:
         </label>
@@ -50,14 +50,14 @@ const Register = ({ close, switchToLogin }) => {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          className="mt-1 block w-full px-3 py-1 border dark:bg-stone-400 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm "
           required
         />
       </div>
       <div>
         <label
           htmlFor="password"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-sm font-medium text-gray-700 dark:text-stone-300"
         >
           Password:
         </label>
@@ -65,14 +65,14 @@ const Register = ({ close, switchToLogin }) => {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          className="mt-1 block w-full px-3 py-1 border dark:bg-stone-400 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm "
           required
         />
       </div>
       <div>
         <label
           htmlFor="dob"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-sm font-medium text-gray-700 dark:text-stone-300"
         >
           Date of Birth:
         </label>
@@ -80,7 +80,7 @@ const Register = ({ close, switchToLogin }) => {
           type="date"
           value={dob}
           onChange={(e) => setDob(e.target.value)}
-          className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          className="mt-1 block w-full px-3 py-1 border dark:bg-stone-400 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm "
           required
         />
       </div>

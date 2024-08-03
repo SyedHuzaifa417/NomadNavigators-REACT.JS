@@ -48,7 +48,7 @@ const Reviews = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl text-slate-700 font-semibold mt-6 mb-8 sm:mb-12">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl text-cyan-700 dark:text-cyan-500 font-semibold mt-6 mb-8 sm:mb-12">
         What Our Customers Are Saying.
       </h2>
       <div className="flex flex-col lg:flex-row gap-8 relative">
@@ -64,7 +64,7 @@ const Reviews = () => {
               {displayReviews.map((review) => (
                 <div
                   key={review.id}
-                  className="mb-4 p-4 bg-slate-50 border rounded-xl shadow-md"
+                  className="mb-4 p-4 bg-slate-50 dark:bg-stone-700  rounded-xl shadow-md"
                 >
                   <div className="flex items-center mb-2">
                     {review.imageBase64 ? (
@@ -85,14 +85,14 @@ const Reviews = () => {
                       <h3 className="text-lg font-semibold">{review.name}</h3>
                       <div className="flex flex-col sm:flex-row sm:justify-between">
                         <p className="flex">{renderStars(review.rating)}</p>
-                        <p className="text-gray-600 sm:ml-auto text-sm">
+                        <p className="text-gray-600 dark:text-stone-400 sm:ml-auto text-sm">
                           Date of experience:{" "}
                           {new Date(review.date).toLocaleDateString()}
                         </p>
                       </div>
                     </div>
                   </div>
-                  <p className="mt-2">{review.message}</p>
+                  <p className="mt-2 dark:text-stone-300">{review.message}</p>
                 </div>
               ))}
             </div>
@@ -111,7 +111,7 @@ const Reviews = () => {
               }
               pageClassName={"inline-block"}
               pageLinkClassName={
-                "px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-200"
+                "px-3 py-1  rounded-md hover:bg-cyan-800 hover:text-white"
               }
               previousClassName={"inline-block"}
               previousLinkClassName={
@@ -125,7 +125,7 @@ const Reviews = () => {
               breakLinkClassName={
                 "px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-200"
               }
-              activeClassName={"bg-blue-500 text-white"}
+              activeClassName={"bg-cyan-600 text-white rounded-lg"}
             />
           )}
         </div>

@@ -32,14 +32,14 @@ const Login = ({ close }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-40 z-50">
-      <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-lg relative">
+      <div className="bg-white dark:bg-stone-800 rounded-lg p-6 w-full max-w-md shadow-lg relative">
         <button
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+          className="absolute top-4 right-4 text-gray-500 dark:text-stone-300 hover:text-gray-700 dark:hover:text-slate-50"
           onClick={close}
         >
           &times;
         </button>
-        <h2 className="text-4xl font-sans font-semibold mb-9 text-center">
+        <h2 className="text-4xl dark:text-stone-100 font-sans font-semibold mb-9 text-center">
           {loginMode === "login" ? "Login" : "Register"}
         </h2>
 
@@ -48,7 +48,7 @@ const Login = ({ close }) => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-700 dark:text-stone-300"
               >
                 Email:
               </label>
@@ -57,14 +57,14 @@ const Login = ({ close }) => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 block w-full px-3 py-1 border dark:bg-stone-400 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 required
               />
             </div>
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-700 dark:text-stone-300"
               >
                 Password:
               </label>
@@ -73,7 +73,7 @@ const Login = ({ close }) => {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 block w-full px-3 py-1 border dark:bg-stone-400 border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm "
                 required
               />
             </div>
@@ -94,23 +94,22 @@ const Login = ({ close }) => {
           <Register close={close} switchToLogin={handleLoginClick} />
         )}
 
-        {/* Toggle between Login and Register */}
         <div className="mt-4 text-center">
           {loginMode === "login" ? (
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-stone-400">
               Don't have an account?{" "}
               <button
-                className="text-indigo-600 hover:underline focus:outline-none"
+                className="text-indigo-600 dark:text-indigo-400 hover:underline focus:outline-none"
                 onClick={handleRegisterClick}
               >
                 Register
               </button>
             </p>
           ) : (
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-stone-400">
               Already have an account?{" "}
               <button
-                className="text-indigo-600 hover:underline focus:outline-none"
+                className="text-indigo-600 dark:text-indigo-400 hover:underline focus:outline-none"
                 onClick={handleLoginClick}
               >
                 Login

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./navbar.css";
 import { IoIosCloseCircle } from "react-icons/io";
 import { TbGridDots } from "react-icons/tb";
 import { GoPerson } from "react-icons/go";
@@ -10,6 +9,9 @@ import Modal from "../../Components/Modal";
 import Login from "../../Components/Login";
 import Booking from "../Booking";
 import { useTravelAuth } from "../../Hooks/useTravelAuth";
+import ThemeToggle from "../../Components/ThemeBtn";
+import "./navbar.css";
+
 const Navbar = () => {
   const [active, setActive] = useState("navBar");
   const [modalContent, setModalContent] = useState(null);
@@ -48,7 +50,7 @@ const Navbar = () => {
 
   return (
     <section className="navBarSection">
-      <header className="header flex">
+      <header className={`header flex`}>
         <div className="logoDiv flex items-center">
           <NavLink to="/" className="logo flex items-center">
             <img src={logo} alt="logo" className="logos" />
@@ -68,11 +70,9 @@ const Navbar = () => {
                 </NavLink>
               </li>
             ))}
-
             <button className="btn text-white" onClick={handleBookNowClick}>
               BOOK NOW
             </button>
-
             <button className="px-3 ml-5 py-2" onClick={handleAuthAction}>
               {isLoggedIn ? (
                 <PiSignOut className="w-10 h-7 hover:scale-125 text-slate-600" />
@@ -95,7 +95,7 @@ const Navbar = () => {
       {modalContent && (
         <Modal open={!!modalContent} onClose={closeModal}>
           {modalContent}
-        </Modal> // !!modalcontent means if modalcontent is not null then its true(boolean) , else false if null or undefined
+        </Modal>
       )}
     </section>
   );

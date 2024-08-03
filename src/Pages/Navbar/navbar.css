@@ -1,34 +1,16 @@
-:root {
-  --PrimaryColor: hsl(199, 100%, 33%);
-  --SecondaryColor: hsl(187, 85%, 43%);
-  --gradientColor: linear-gradient(
-    to right,
-    hsl(187, 85%, 43%),
-    hsl(199, 100%, 33%)
-  );
-  --whiteColor: hsl(0, 0%, 100%);
-  --blackColor: hsl(201, 33%, 16%);
-  --textColor: hsl(240, 4%, 36%);
-  --whiteColorDeam: hsl(0, 0%, 93%);
-  --gretText: rgb(190, 190, 190);
-  --inputColor: rgb(239, 239, 239);
-  --bodyColor: rgb(240, 240, 246);
-  --cardBG: rgb(225, 225, 235);
-}
-
 .header {
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgb(221, 221, 221);
+  background: rgb(233, 236, 236);
   width: 100%;
   padding: 1rem;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(2, 15, 29, 0.244);
 }
 .header .logo {
-  color: var(--blackColor);
+  color: rgb(17, 73, 77);
   font-weight: 600;
   cursor: pointer;
   align-items: center;
@@ -37,14 +19,14 @@
 
 .header .logo .icon {
   font-size: 25px;
-  color: var(--PrimaryColor);
+  color: rgb(17, 73, 77);
   transform: translateY(5px);
 }
 
 @media screen and (max-width: 768px) {
   .header .navBar {
     position: absolute;
-    background: var(--whiteColorDeam);
+    background: rgb(233, 236, 236);
     height: -moz-max-content;
     height: max-content;
     width: 60%;
@@ -68,13 +50,13 @@
     padding: 0.5rem 0;
   }
   .header .navBar .navLists .navItem .navLink {
-    color: var(--textColor);
+    color: #044f5a;
     font-size: 0.9rem;
     font-weight: 600;
   }
   .header .navBar .navLists .navItem .navLink:hover,
   .on {
-    color: var(--PrimaryColor);
+    color: #0fa7be;
     font-weight: 600;
     font-size: 1rem;
   }
@@ -83,16 +65,16 @@
   }
   .header .navBar .navLists .btn a {
     font-weight: 600;
-    color: var(--whiteColor);
+    color: #f6f6f6;
   }
   .header .navBar .closeNavbar {
     position: absolute;
     top: 1rem;
     right: 1.5rem;
-    color: var(--PrimaryColor);
+    color: #007a8c;
   }
   .header .navBar .closeNavbar:hover {
-    color: var(--SecondaryColor);
+    color: #4eb7c7;
   }
   .header .activeNavbar {
     top: 7rem;
@@ -100,10 +82,10 @@
 }
 .header .toggleNavbar .icon {
   font-size: 25px;
-  color: var(--PrimaryColor);
+  color: #007a8c;
 }
 .header .toggleNavbar:hover.icon {
-  color: var(--SecondaryColor);
+  color: #91d0da;
 }
 
 @media screen and (min-width: 769px) {
@@ -121,14 +103,14 @@
     flex-direction: row;
   }
   .header .navBar .navLists .navItem .navLink {
-    color: var(--textColor);
+    color: #044f5a;
     padding: 0 0.45rem;
     font-size: 0.9rem;
     font-weight: 500;
   }
   .header .navBar .navLists .navItem .navLink:hover,
   .on {
-    color: var(--PrimaryColor);
+    color: #0fa7be;
     font-weight: 600;
     font-size: 1rem;
   }
@@ -136,7 +118,7 @@
     margin-left: 1rem;
   }
   .header .navBar .navLists .btn a {
-    color: var(--whiteColor);
+    color: #f6f6f6;
     font-weight: 500;
   }
 }
@@ -149,4 +131,4 @@
   .header {
     padding: 1rem 8.5rem;
   }
-} /*# sourceMappingURL=navbar.css.map */
+}

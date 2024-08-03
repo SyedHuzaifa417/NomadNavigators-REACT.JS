@@ -135,14 +135,14 @@ const Places = () => {
 
   return (
     <div className="flex flex-col gap-9 px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl mx-auto">
-      <div className="flex flex-col sm:flex-row shadow-xl w-full bg-stone-300/40 rounded-full justify-between p-3 gap-3 my-4 overflow-x-auto">
+      <div className="flex flex-col sm:flex-row shadow-xl dark:shadow-stone-900 w-full bg-stone-300/40 dark:bg-stone-700 rounded-full justify-between p-3 gap-3 my-4 overflow-x-auto">
         <div className="flex flex-wrap justify-center sm:justify-start">
           <button
             onClick={() => handleSortChange("popularity")}
             className={`px-4 py-2 font-medium whitespace-nowrap ${
               sortCriteria === "popularity"
                 ? "text-cyan-500"
-                : "text-stone-600 hover:text-cyan-500"
+                : "text-stone-600 dark:text-stone-300 hover:text-cyan-500 dark:hover:text-cyan-500"
             }`}
           >
             Top Destinations
@@ -152,7 +152,7 @@ const Places = () => {
             className={`px-4 py-2 font-medium whitespace-nowrap ${
               sortCriteria === "price"
                 ? "text-cyan-500"
-                : "text-stone-600 hover:text-cyan-500"
+                : "text-stone-600 dark:text-stone-300 hover:text-cyan-500 dark:hover:text-cyan-500"
             }`}
           >
             By Price
@@ -162,7 +162,7 @@ const Places = () => {
             className={`px-4 py-2 font-medium whitespace-nowrap ${
               sortCriteria === "nearest"
                 ? "text-cyan-500"
-                : "text-stone-600 hover:text-cyan-500"
+                : "text-stone-600 dark:text-stone-300 hover:text-cyan-500 dark:hover:text-cyan-500"
             }`}
           >
             Nearest
@@ -176,7 +176,7 @@ const Places = () => {
               className={`px-4 py-2 font-medium whitespace-nowrap ${
                 filter === option
                   ? "text-cyan-500"
-                  : "text-stone-600 hover:text-cyan-500"
+                  : "text-stone-600 dark:text-stone-300 hover:text-cyan-500 dark:hover:text-cyan-500"
               }`}
             >
               {option.charAt(0).toUpperCase() + option.slice(1)}
@@ -184,7 +184,7 @@ const Places = () => {
           ))}
           <button
             onClick={clearAllFilters}
-            className="px-4 py-2 font-bold rounded-md hover:scale-150"
+            className="px-4 py-2 font-bold rounded-md hover:scale-150 hover:text-cyan-500"
           >
             <IoCloseSharp />
           </button>
@@ -224,11 +224,11 @@ const Places = () => {
           pageRangeDisplayed={5}
           onPageChange={handlePageClick}
           containerClassName={
-            "flex justify-center sm:justify-end space-x-2 my-8 py-4"
+            "flex justify-center lg:justify-end space-x-2 my-8 py-4"
           }
           pageClassName={"inline-block"}
           pageLinkClassName={
-            "px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-200"
+            "px-3 py-1  rounded-md hover:bg-cyan-800 hover:text-white"
           }
           previousClassName={"inline-block"}
           previousLinkClassName={
@@ -242,7 +242,7 @@ const Places = () => {
           breakLinkClassName={
             "px-3 py-1 border border-gray-300 rounded-md hover:bg-gray-200"
           }
-          activeClassName={"bg-blue-500 text-white"}
+          activeClassName={"bg-cyan-600 text-white rounded-lg"}
         />
       )}
     </div>

@@ -57,7 +57,7 @@ const Flights = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="w-4/5 mx-auto max-w-5xl  mt-8 shadow-xl bg-stone-300/40 p-4 rounded-lg mb-8">
+      <div className="w-4/5 mx-auto max-w-5xl  mt-8 shadow-xl bg-stone-300/40 dark:bg-slate-900/50 p-4 rounded-lg mb-8">
         <div className="flex flex-wrap  items-start justify-around max-w-full">
           <div className="mb-4 mr-4">
             <select
@@ -68,7 +68,11 @@ const Flights = () => {
             >
               <option value="">Select Airline</option>
               {uniqueValues("company").map((airline) => (
-                <option key={airline} value={airline}>
+                <option
+                  key={airline}
+                  value={airline}
+                  className="dark:bg-slate-800"
+                >
                   {airline}
                 </option>
               ))}
@@ -76,7 +80,7 @@ const Flights = () => {
           </div>
 
           <div className="mb-4 mr-4">
-            <label htmlFor="date" className="text-stone-600">
+            <label htmlFor="date" className="text-stone-600 dark:text-gray-300">
               Depart:
             </label>
             <input
@@ -89,7 +93,10 @@ const Flights = () => {
           </div>
 
           <div className="mb-4 mr-4">
-            <label htmlFor="returnDate" className="text-stone-600">
+            <label
+              htmlFor="returnDate"
+              className="text-stone-600 dark:text-gray-300"
+            >
               Return:
             </label>
             <input
@@ -110,7 +117,7 @@ const Flights = () => {
             >
               <option value="">Select From</option>
               {uniqueValues("from").map((from) => (
-                <option key={from} value={from}>
+                <option key={from} value={from} className="dark:bg-slate-800">
                   {from}
                 </option>
               ))}
@@ -126,7 +133,11 @@ const Flights = () => {
             >
               <option value="">Select Return From</option>
               {uniqueValues("returnFrom").map((returnFrom) => (
-                <option key={returnFrom} value={returnFrom}>
+                <option
+                  key={returnFrom}
+                  value={returnFrom}
+                  className="dark:bg-slate-800"
+                >
                   {returnFrom}
                 </option>
               ))}
@@ -142,7 +153,7 @@ const Flights = () => {
             >
               <option value="">Select Type</option>
               {uniqueValues("type").map((type) => (
-                <option key={type} value={type}>
+                <option key={type} value={type} className="dark:bg-slate-800">
                   {type}
                 </option>
               ))}
@@ -150,7 +161,9 @@ const Flights = () => {
           </div>
 
           <div className="mb-4 w-full">
-            <label className="text-stone-600">Price Range:</label>
+            <label className="text-stone-600 dark:text-gray-300">
+              Price Range:
+            </label>
             <Slider
               value={filters.priceRange}
               onChange={(_, newValue) =>
@@ -159,6 +172,18 @@ const Flights = () => {
               valueLabelDisplay="auto"
               min={0}
               max={2000}
+              sx={{
+                color: "#044f5a", // Slider track color (cyan shade)
+                "& .MuiSlider-thumb": {
+                  backgroundColor: "#074b4b", // Thumb color (darker cyan shade)
+                },
+                "& .MuiSlider-rail": {
+                  backgroundColor: "#4bc2c2", // Rail color (light cyan shade)
+                },
+                "& .MuiSlider-track": {
+                  backgroundColor: "#044f5a", // Track color (cyan shade)
+                },
+              }}
             />
             <div className="flex justify-between">
               <span>$ {filters.priceRange[0]}</span>
@@ -168,7 +193,7 @@ const Flights = () => {
 
           <button
             onClick={applyFilters}
-            className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+            className="bg-cyan-800 text-white p-2 rounded hover:bg-cyan-600"
           >
             Apply Filters
           </button>

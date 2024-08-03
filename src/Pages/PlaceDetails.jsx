@@ -81,32 +81,34 @@ const PlaceDetails = () => {
             </div>
           </div>
 
-          <div className="w-full max-w-4xl p-6 bg-gray-100 shadow-2xl rounded-lg mt-4 relative z-10">
+          <div className="w-full max-w-4xl p-6 bg-gray-100 dark:bg-stone-600 shadow-2xl rounded-lg mt-4 relative z-10">
             <div className="flex justify-between mb-10">
-              <p className="text-xl text-gray-600 flex gap-3 my-2">
+              <p className="text-xl text-gray-600 dark:text-stone-300 flex gap-3 my-2">
                 Country:{" "}
-                <span className="text-2xl font-semibold text-gray-650">
+                <span className="text-2xl font-semibold text-gray-650 dark:text-stone-100">
                   {place.country}
                 </span>
               </p>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-stone-300">
                 Price per person:{" "}
-                <span className="text-2xl font-semibold text-gray-650">
+                <span className="text-2xl font-semibold text-gray-650 dark:text-stone-100">
                   ${place.price}
                 </span>
               </p>
             </div>
-            <p className="text-xl flex justify-center text-gray-700 mb-2 gap-3">
+            <p className="text-xl flex justify-center text-gray-700 mb-2 gap-3 dark:text-stone-300">
               Liked By:{" "}
-              <span className="text-gray-650 font-semibold text-2xl">
+              <span className="text-gray-650 font-semibold text-2xl dark:text-stone-100">
                 {place.popularity}
               </span>{" "}
               Travellers
             </p>
-            <p className="text-2xl text-gray-600 my-6">{place.description}</p>
+            <p className="text-2xl text-gray-600 my-6 dark:text-stone-400">
+              {place.description}
+            </p>
 
             <div className="mt-8">
-              <h3 className="text-3xl font-semibold text-gray-800">
+              <h3 className="text-3xl font-semibold text-gray-800 dark:text-stone-300">
                 Great For:
               </h3>
               <div className="flex flex-wrap gap-2 mt-5">

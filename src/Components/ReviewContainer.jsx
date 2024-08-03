@@ -44,7 +44,7 @@ const ReviewContainer = ({ reviews, refreshReviews }) => {
     reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length;
 
   return (
-    <div className="w-full bg-slate-50 p-4 sm:p-6 rounded-lg shadow-md">
+    <div className="w-full bg-slate-50 dark:bg-stone-700/70 p-4 sm:p-6 rounded-lg shadow-md">
       <div className="flex flex-col sm:flex-row justify-between mb-4">
         <div>
           <h2 className="text-xl sm:text-2xl font-medium font-sans mb-2">
@@ -56,7 +56,7 @@ const ReviewContainer = ({ reviews, refreshReviews }) => {
             </h1>
             <div className="ml-2">
               <p>⭐⭐⭐⭐⭐</p>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-600 dark:text-stone-300">
                 {reviews ? reviews.length : 0} Reviews
               </p>
             </div>
@@ -64,7 +64,7 @@ const ReviewContainer = ({ reviews, refreshReviews }) => {
         </div>
 
         <button
-          className="bg-blue-600 text-white py-2 px-4 rounded-sm mt-4 sm:mt-0"
+          className="bg-cyan-600 hover:bg-cyan-800 text-white py-2 px-4 rounded-md mt-4 sm:mt-0"
           onClick={handleWriteReviewClick}
         >
           Write a review
@@ -74,16 +74,18 @@ const ReviewContainer = ({ reviews, refreshReviews }) => {
       <div className="mt-4">
         {[5, 4, 3, 2, 1].map((num) => (
           <div className="flex items-center mb-1" key={num}>
-            <span className="text-sm text-gray-600 w-16">{num} Stars</span>
+            <span className="text-sm text-gray-600 dark:text-slate-300 w-16">
+              {num} Stars
+            </span>
             <div className="relative w-full h-2 ml-2 bg-gray-300 rounded">
               <div
-                className="absolute left-0 top-0 h-2 bg-blue-500 rounded"
+                className="absolute left-0 top-0 h-2 bg-cyan-500 rounded"
                 style={progressBarStyles(
                   (ratingNumber(num) / reviews.length) * 100
                 )}
               ></div>
             </div>
-            <span className="text-sm text-gray-600 ml-2 w-8 text-right">
+            <span className="text-sm text-gray-600 dark:text-slate-300 ml-2 w-8 text-right">
               {ratingNumber(num)}
             </span>
           </div>
