@@ -31,14 +31,14 @@ const Partner = ({ close }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-40 z-50">
-      <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-lg relative">
+      <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-lg relative dark:bg-stone-800">
         <button
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-500"
           onClick={close}
         >
           &times;
         </button>
-        <h2 className="text-4xl font-sans font-semibold mb-9 text-center">
+        <h2 className="text-4xl font-sans font-semibold mb-9 text-center text-gray-800 dark:text-gray-300">
           Partner Registration
         </h2>
 
@@ -46,7 +46,7 @@ const Partner = ({ close }) => {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-400"
             >
               Name:
             </label>
@@ -55,14 +55,14 @@ const Partner = ({ close }) => {
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-stone-400"
               required
             />
           </div>
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-400"
             >
               Email:
             </label>
@@ -71,14 +71,14 @@ const Partner = ({ close }) => {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-stone-400"
               required
             />
           </div>
           <div>
             <label
               htmlFor="contact"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-400"
             >
               Contact:
             </label>
@@ -87,14 +87,14 @@ const Partner = ({ close }) => {
               id="contact"
               value={contact}
               onChange={(e) => setContact(e.target.value)}
-              className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-stone-400"
               required
             />
           </div>
           <div>
             <label
               htmlFor="areaOfInterest"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-400"
             >
               Area of Interest:
             </label>
@@ -103,14 +103,14 @@ const Partner = ({ close }) => {
               id="areaOfInterest"
               value={areaOfInterest}
               onChange={(e) => setAreaOfInterest(e.target.value)}
-              className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-stone-400"
               required
             />
           </div>
           <div>
             <label
               htmlFor="country"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-400"
             >
               Country:
             </label>
@@ -119,13 +119,13 @@ const Partner = ({ close }) => {
               id="country"
               value={country}
               onChange={(e) => setCountry(e.target.value)}
-              className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-stone-400"
               required
             />
           </div>
           {!isSubmitted && error && <p className="text-red-500">{error}</p>}
           {!error && isSubmitted && (
-            <div className="text-center text-blue-700">
+            <div className="text-center text-blue-700 dark:text-blue-400">
               Registration Submitted Successfully!
             </div>
           )}

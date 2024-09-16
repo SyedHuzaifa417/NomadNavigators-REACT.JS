@@ -9,7 +9,6 @@ import Modal from "../../Components/Modal";
 import Login from "../../Components/Login";
 import Booking from "../Booking";
 import { useTravelAuth } from "../../Hooks/useTravelAuth";
-import ThemeToggle from "../../Components/ThemeBtn";
 import "./navbar.css";
 
 const Navbar = () => {
@@ -75,9 +74,9 @@ const Navbar = () => {
             </button>
             <button className="px-3 ml-5 py-2" onClick={handleAuthAction}>
               {isLoggedIn ? (
-                <PiSignOut className="w-10 h-7 hover:scale-125 text-slate-600" />
+                <PiSignOut className="w-10 h-7 hover:scale-125 text-slate-600 dark:text-gray-300" />
               ) : (
-                <GoPerson className="w-10 h-7 hover:scale-125 text-slate-600" />
+                <GoPerson className="w-10 h-7 hover:scale-125 text-slate-600 dark:text-gray-300" />
               )}
             </button>
           </ul>

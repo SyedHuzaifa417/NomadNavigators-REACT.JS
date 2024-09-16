@@ -1,16 +1,33 @@
+:root {
+  /* Light theme colors */
+  --light-bg: rgb(233, 236, 236);
+  --light-text: rgb(17, 73, 77);
+  --light-hover: #0fa7be;
+  --light-btn-text: #f6f6f6;
+  --light-shadow: rgba(2, 15, 29, 0.244);
+
+  /* Dark theme colors */
+  --dark-bg: #1a1a1a;
+  --dark-text: #e0e0e0;
+  --dark-hover: #4eb7c7;
+  --dark-btn-text: #1a1a1a;
+  --dark-shadow: rgba(0, 0, 0, 0.4);
+}
+
 .header {
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgb(233, 236, 236);
+  background: var(--light-bg);
   width: 100%;
   padding: 1rem;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(2, 15, 29, 0.244);
+  box-shadow: 0 2px 4px var(--light-shadow);
 }
+
 .header .logo {
-  color: rgb(17, 73, 77);
+  color: var(--light-text);
   font-weight: 600;
   cursor: pointer;
   align-items: center;
@@ -19,15 +36,14 @@
 
 .header .logo .icon {
   font-size: 25px;
-  color: rgb(17, 73, 77);
+  color: var(--light-text);
   transform: translateY(5px);
 }
 
 @media screen and (max-width: 768px) {
   .header .navBar {
     position: absolute;
-    background: rgb(233, 236, 236);
-    height: -moz-max-content;
+    background: var(--light-bg);
     height: max-content;
     width: 60%;
     border-radius: 1rem;
@@ -36,9 +52,10 @@
     padding: 1rem;
     transform: translate(-50%);
     z-index: 2000;
-    box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
+    box-shadow: 0 2px 4px var(--light-shadow);
     transition: 0.3s ease-in-out;
   }
+
   .header .navBar .navLists {
     flex-direction: column;
     justify-content: center;
@@ -46,46 +63,56 @@
     margin: auto;
     padding: 0.5rem 0;
   }
+
   .header .navBar .navLists .navItem {
     padding: 0.5rem 0;
   }
+
   .header .navBar .navLists .navItem .navLink {
-    color: #044f5a;
+    color: var(--light-text);
     font-size: 0.9rem;
     font-weight: 600;
   }
+
   .header .navBar .navLists .navItem .navLink:hover,
   .on {
-    color: #0fa7be;
+    color: var(--light-hover);
     font-weight: 600;
     font-size: 1rem;
   }
+
   .header .navBar .navLists .btn {
     margin-top: 1rem;
   }
+
   .header .navBar .navLists .btn a {
     font-weight: 600;
-    color: #f6f6f6;
+    color: var(--light-btn-text);
   }
+
   .header .navBar .closeNavbar {
     position: absolute;
     top: 1rem;
     right: 1.5rem;
-    color: #007a8c;
+    color: var(--light-text);
   }
+
   .header .navBar .closeNavbar:hover {
-    color: #4eb7c7;
+    color: var(--light-hover);
   }
+
   .header .activeNavbar {
     top: 7rem;
   }
 }
+
 .header .toggleNavbar .icon {
   font-size: 25px;
-  color: #007a8c;
+  color: var(--light-text);
 }
+
 .header .toggleNavbar:hover.icon {
-  color: #91d0da;
+  color: var(--light-hover);
 }
 
 @media screen and (min-width: 769px) {
@@ -93,42 +120,81 @@
   .closeNavbar {
     display: none;
   }
+
   .header {
     padding: 1.5rem 2rem;
   }
+
   .header .navBar .navLists {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
   }
+
   .header .navBar .navLists .navItem .navLink {
-    color: #044f5a;
+    color: var(--light-text);
     padding: 0 0.45rem;
     font-size: 0.9rem;
     font-weight: 500;
   }
+
   .header .navBar .navLists .navItem .navLink:hover,
   .on {
-    color: #0fa7be;
+    color: var(--light-hover);
     font-weight: 600;
     font-size: 1rem;
   }
+
   .header .navBar .navLists .btn {
     margin-left: 1rem;
   }
+
   .header .navBar .navLists .btn a {
-    color: #f6f6f6;
+    color: var(--light-btn-text);
     font-weight: 500;
   }
 }
+
 @media screen and (min-width: 960px) {
   .header .navBar .navLists .navItem {
     padding: 0 0.7rem;
   }
 }
+
 @media screen and (min-width: 1240px) {
   .header {
     padding: 1rem 8.5rem;
+  }
+}
+
+/* Dark theme styles */
+.dark .header {
+  background: var(--dark-bg);
+  box-shadow: 0 2px 4px var(--dark-shadow);
+}
+
+.dark .header .logo,
+.dark .header .logo .icon,
+.dark .header .navBar .navLists .navItem .navLink,
+.dark .header .toggleNavbar .icon {
+  color: var(--dark-text);
+}
+
+.dark .header .navBar .navLists .navItem .navLink:hover,
+.dark .on,
+.dark .header .navBar .closeNavbar:hover,
+.dark .header .toggleNavbar:hover.icon {
+  color: var(--dark-hover);
+}
+
+.dark .header .navBar .navLists .btn a {
+  color: var(--dark-btn-text);
+}
+
+@media screen and (max-width: 768px) {
+  .dark .header .navBar {
+    background: var(--dark-bg);
+    box-shadow: 0 2px 4px var(--dark-shadow);
   }
 }
